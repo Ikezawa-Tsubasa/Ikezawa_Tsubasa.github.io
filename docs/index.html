@@ -6,9 +6,28 @@
   </head>
   <body>
     <py-script>
-      from datetime import datetime
-      now = datetime.now()
-      print(f"今は{now:%Y年%m月%d日 %H:%M:%S}です。")
+      #モジュールのインストール
+      import tkinter
+      # ウィンドウの作成
+      root = tkinter.Tk()
+      # ウィンドウタイトルの設定
+      root.title("お絵描き")
+      # ウィンドウのサイズを設定
+      root.geometry('400x300')
+      # キャンバスの作成
+      canvas = tkinter.Canvas(root, width=400, height=300)
+      # キャンバスの配置
+      canvas.pack()
+      # 好きなように線や図形、画像を配置しよう
+      canvas.create_rectangle(100, 150, 300, 300, fill="white", width=1, outline="black")
+      canvas.create_polygon(200, 0, 70, 150, 330, 150,fill="brown", width=1, outline="black")
+      canvas.create_oval(125, 175, 175, 225, fill="#f0f8ff")
+      canvas.create_rectangle(225, 200, 275, 300, fill="#deb887", width=1, outline="black")
+      canvas.create_oval(250, 235, 270, 255, fill="#f0f8ff")
+      canvas.create_arc(0 , 0, 50, 50, start=0, extent=270, fill="yellow")
+      # ウィンドウを表示
+      root.mainloop()
+
     </py-script>
   </body>
 </html>
