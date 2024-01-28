@@ -1,14 +1,17 @@
-<html lang="ja">
-  <head>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-  <py-env>
-     - tkinter
-  </py-env>
+<head>
+  <meta charset="utf-8">
+  <!-- PyScriptの読み込み -->
+  <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.2/core.css" />
+  <script type="module" src="https://pyscript.net/releases/2023.11.2/core.js"></script>
+  <!-- PyScriptで使うパッケージを指定 --- (*1) -->
+  <py-config>
+      packages = ["matplotlib"]
+  </py-config>
   </head>
   <body>
-    <py-script>
+  <!-- グラフの描画先を指定 --- (*2) -->
+  <div id="mlp" align="center"></div>
+  <script type="py">
       #モジュールのインストール
       import tkinter
       # ウィンドウの作成
@@ -31,6 +34,5 @@
       # ウィンドウを表示
       root.mainloop()
 
-    </py-script>
-  </body>
-</html>
+  </script>
+</body>
